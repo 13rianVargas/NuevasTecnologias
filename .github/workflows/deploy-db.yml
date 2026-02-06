@@ -10,11 +10,9 @@ jobs:
       - name: Setup TiDB Cloud CLI
         uses: tidbcloud/setup-tidbcloud-cli@v0
         with:
-          # Se cambiaron los nombres de los inputs
           api_public_key: ${{ secrets.TIDB_PUBLIC_KEY }}
           api_private_key: ${{ secrets.TIDB_PRIVATE_KEY }}
 
       - name: Verify Connection
         run: |
-          # El comando correcto es 'clusters' (en plural)
-          ticloud clusters list --project-id ${{ secrets.TIDB_PROJECT_ID }}
+          ticloud cluster list --project-id ${{ secrets.TIDB_PROJECT_ID }}
