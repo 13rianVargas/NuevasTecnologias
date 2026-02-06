@@ -15,4 +15,4 @@ jobs:
 
       - name: Verify Connection
         run: |
-          ticloud serverlessess list --project-id ${{ secrets.TIDB_PROJECT_ID }}
+          ticloud serverless list --project-id ${{ secrets.TIDB_PROJECT_ID }}
