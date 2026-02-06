@@ -1,0 +1,21 @@
+name: TiDB Cloud Sync
+on:
+  push:
+    branches:
+      - main # Se ejecuta cada vez que subas cambios a la rama principal
+
+jobs:
+  test-db:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup TiDB Cloud CLI
+        uses: tidbcloud/setup-tidbcloud-cli@v0
+        with:
+          public_key: ${{ secrets.TIDB_PUBLIC_KEY }}
+          private_key: ${{ secrets.TIDB_PRIVATE_KEY }}
+
+      - name: Verify Connection
+        run: |
+          ticloud cluster list --project-id ${{ secrets.TIDB_PROJECT_ID }}
