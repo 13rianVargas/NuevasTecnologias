@@ -17,9 +17,9 @@ public class Articulo {
     private int volumen;
     private int numero;     
     private int paginas;
-    private double doi; 
+    private String doi; 
 
-    public Articulo(String titulo, String autores, int anio, String revista, int volumen, int numero, int paginas, double doi) {
+    public Articulo(String titulo, String autores, int anio, String revista, int volumen, int numero, int paginas, String doi) {
         this.titulo = titulo;
         this.autores = autores;
         this.anio = anio;
@@ -94,11 +94,11 @@ public class Articulo {
         this.paginas = paginas;
     }
 
-    public double getDoi() {
+    public String getDoi() {
         return doi;
     }
 
-    public void setDoi(double doi) {
+    public void setDoi(String doi) {
         this.doi = doi;
     }
         

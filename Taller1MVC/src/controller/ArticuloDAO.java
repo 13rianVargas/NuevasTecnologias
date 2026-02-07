@@ -30,7 +30,7 @@ public class ArticuloDAO {
             statement.setInt(5, articulo.getVolumen());
             statement.setInt(6, articulo.getNumero());
             statement.setInt(7, articulo.getPaginas());
-            statement.setDouble(8, articulo.getDoi());
+            statement.setString(8, articulo.getDoi());
 
             int rowsInserted = statement.executeUpdate();
             if (rowsInserted > 0) {
@@ -56,7 +56,7 @@ public class ArticuloDAO {
             if (result.next()) {
                 articulo = new Articulo(result.getString("titulo"), result.getString("autores"),
                         result.getInt("anio"), result.getString("revista"), result.getInt("volumen"),
-                        result.getInt("numero"), result.getInt("paginas"), result.getDouble("doi"));
+                        result.getInt("numero"), result.getInt("paginas"), result.getString("doi"));
                 articulo.setId(result.getInt("id"));
             } else {
                 JOptionPane.showMessageDialog(null, "¡No existe registro!");
@@ -82,7 +82,7 @@ public class ArticuloDAO {
             statement.setInt(5, articulo.getVolumen());
             statement.setInt(6, articulo.getNumero());
             statement.setInt(7, articulo.getPaginas());
-            statement.setDouble(8, articulo.getDoi());
+            statement.setString(8, articulo.getDoi());
             statement.setInt(9, id);
             
             int result = statement.executeUpdate();
