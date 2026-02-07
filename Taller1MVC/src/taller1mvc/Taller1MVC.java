@@ -14,7 +14,10 @@ public class Taller1MVC {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        views.FrmNuevoArticulo vista = new views.FrmNuevoArticulo();
+        vista.setVisible(true);
+        vista.setLocationRelativeTo(null);
+        vista.setTitle("Gestión de Artículos de Investigación");
     }
     
 }
