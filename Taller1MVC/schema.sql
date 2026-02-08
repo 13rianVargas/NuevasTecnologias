@@ -15,7 +15,7 @@ CREATE TABLE articulos (
   paginas VARCHAR(50) DEFAULT NULL,
   doi VARCHAR(255) DEFAULT NULL,
   PRIMARY KEY (id)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 AUTO_ID_CACHE = 1;
 
 -- INSERTS
 INSERT INTO articulos (autores, anio, titulo, revista, volumen, numero, paginas, doi) 
