@@ -45,7 +45,7 @@ public class FrmNuevoArticulo extends javax.swing.JFrame {
         volumenField = new javax.swing.JTextField();
         numeroField = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
-        jTextField7 = new javax.swing.JTextField();
+        idField = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
@@ -88,13 +88,14 @@ public class FrmNuevoArticulo extends javax.swing.JFrame {
 
         jLabel8.setText("ID");
 
-        jTextField7.setColumns(20);
-        jTextField7.addActionListener(this::jTextField7ActionPerformed);
+        idField.setColumns(20);
+        idField.addActionListener(this::idFieldActionPerformed);
 
         jButton1.setText("Guardar");
         jButton1.addActionListener(this::jButton1ActionPerformed);
 
         jButton2.setText("Buscar");
+        jButton2.addActionListener(this::jButton2ActionPerformed);
 
         jButton3.setText("Actualizar");
 
@@ -139,7 +140,7 @@ public class FrmNuevoArticulo extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(83, 83, 83)
-                        .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(idField, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(30, 30, 30))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -174,7 +175,7 @@ public class FrmNuevoArticulo extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(tituloField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(idField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
@@ -218,18 +219,18 @@ public class FrmNuevoArticulo extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_tituloFieldActionPerformed
 
-    private void jTextField7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField7ActionPerformed
+    private void idFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_idFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField7ActionPerformed
+    }//GEN-LAST:event_idFieldActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         String titulo = this.tituloField.getText();
         String autor = this.autorField.getText();
         int anio = Integer.parseInt(this.anioField.getText());
         String revista = this.revistaField.getText();
-        int volumen = Integer.parseInt(this.volumenField.getText());
-        int numero = Integer.parseInt(this.numeroField.getText());
-        int paginas = Integer.parseInt(this.paginasField.getText());
+        String volumen = this.volumenField.getText();
+        String numero = this.numeroField.getText();
+        String paginas = this.paginasField.getText();
         String doi = this.doiField.getText();
         
         Articulo articulo = new Articulo(titulo, autor, anio, revista, volumen, numero, paginas, doi);
@@ -246,6 +247,25 @@ public class FrmNuevoArticulo extends javax.swing.JFrame {
     private void anioFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_anioFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_anioFieldActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        int id = Integer.parseInt(this.idField.getText());
+        System.out.println(id);
+        ArticuloDAO articuloDAO = new ArticuloDAO();
+
+        //Se llama el método para buscar pasando el id
+
+        Articulo articulo = articuloDAO.searchArticulo(id);
+
+        this.tituloField.setText(articulo.getTitulo());
+        this.autorField.setText(articulo.getAutores());
+        this.anioField.setText(String.valueOf(articulo.getAnio()));
+        this.revistaField.setText(articulo.getRevista());
+        this.volumenField.setText(articulo.getVolumen());
+        this.numeroField.setText(articulo.getNumero());
+        this.paginasField.setText(articulo.getPaginas());
+        this.doiField.setText(articulo.getDoi());
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -276,6 +296,7 @@ public class FrmNuevoArticulo extends javax.swing.JFrame {
     private javax.swing.JTextField anioField;
     private javax.swing.JTextField autorField;
     private javax.swing.JTextField doiField;
+    private javax.swing.JTextField idField;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
@@ -290,7 +311,6 @@ public class FrmNuevoArticulo extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField numeroField;
     private javax.swing.JTextField paginasField;
     private javax.swing.JTextField revistaField;
