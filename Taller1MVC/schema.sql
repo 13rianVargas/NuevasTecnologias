@@ -19,7 +19,10 @@ CREATE TABLE articulos (
 
 -- INSERTS
 INSERT INTO articulos (autores, anio, titulo, revista, volumen, numero, paginas, doi) 
-VALUES (
+VALUES 
+
+-- BRIAN
+(
   'Chatterjee, A., & Prinz, A.', 
   2022, 
   'Applying Spring Security Framework with KeyCloak-Based OAuth2 to Protect Microservice Architecture APIs: A Case Study', 
@@ -49,6 +52,40 @@ VALUES (
   '27', 
   'https://doi.org/10.3390/digital5030027'
 ),
+
+-- SEBASTIAN
+(
+  'Mousavi, Z., Islam, C., Babar, M. A., Abuaddba, A., & Moore, K.',
+  2025,
+  'Detecting misuse of security APIs: A systematic review',
+  'ACM Computing Surveys',
+  '57',
+  '12',
+  'Article 303, 1–39',
+  'https://doi.org/10.1145/3735968'
+),
+(
+  'Ouyang, R., Wang, J., Xu, H., Chen, S., Xiong, X., et al.',
+  2023,
+  'A microservice and serverless architecture for secure IoT system',
+  'Sensors',
+  '23',
+  '10',
+  '4868',
+  'https://doi.org/10.3390/s23104868'
+),
+(
+  'Atanasov, I., Pencheva, E., Trifonov, V., & Kassev, K.',
+  2024,
+  'Railway cloud: Management and orchestration functionality designed as microservices',
+  'Applied Sciences',
+  '14',
+  '6',
+  '2368',
+  'https://doi.org/10.3390/app14062368'
+),
+
+-- LINA
 (
   'Chan, D. Y., Wang, J.-F., Chang, C.-I., & Du, J.-W.', 
   2025, 
