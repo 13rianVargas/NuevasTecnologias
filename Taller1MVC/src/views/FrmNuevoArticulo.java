@@ -21,6 +21,19 @@ public class FrmNuevoArticulo extends javax.swing.JFrame {
     public FrmNuevoArticulo() {
         initComponents();
     }
+    
+    private Articulo crearArticuloObj() {
+        String titulo = this.tituloField.getText();
+        String autor = this.autorField.getText();
+        int anio = Integer.parseInt(this.anioField.getText());
+        String revista = this.revistaField.getText();
+        String volumen = this.volumenField.getText();
+        String numero = this.numeroField.getText();
+        String paginas = this.paginasField.getText();
+        String doi = this.doiField.getText();
+        
+        return new Articulo(titulo, autor, anio, revista, volumen, numero, paginas, doi);
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -98,6 +111,7 @@ public class FrmNuevoArticulo extends javax.swing.JFrame {
         jButton2.addActionListener(this::jButton2ActionPerformed);
 
         jButton3.setText("Actualizar");
+        jButton3.addActionListener(this::jButton3ActionPerformed);
 
         jButton4.setText("Eliminar");
 
@@ -224,20 +238,10 @@ public class FrmNuevoArticulo extends javax.swing.JFrame {
     }//GEN-LAST:event_idFieldActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        String titulo = this.tituloField.getText();
-        String autor = this.autorField.getText();
-        int anio = Integer.parseInt(this.anioField.getText());
-        String revista = this.revistaField.getText();
-        String volumen = this.volumenField.getText();
-        String numero = this.numeroField.getText();
-        String paginas = this.paginasField.getText();
-        String doi = this.doiField.getText();
-        
-        Articulo articulo = new Articulo(titulo, autor, anio, revista, volumen, numero, paginas, doi);
         
         ArticuloDAO articuloDAO = new ArticuloDAO();
         
-        articuloDAO.insertArticulo(articulo);
+        articuloDAO.insertArticulo(this.crearArticuloObj());
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void autorFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_autorFieldActionPerformed
@@ -266,6 +270,14 @@ public class FrmNuevoArticulo extends javax.swing.JFrame {
         this.paginasField.setText(articulo.getPaginas());
         this.doiField.setText(articulo.getDoi());
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        int id = Integer.parseInt(this.idField.getText());
+        
+        ArticuloDAO articuloDAO = new ArticuloDAO();
+        
+        articuloDAO.updateArticulo(id, this.crearArticuloObj());
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments
