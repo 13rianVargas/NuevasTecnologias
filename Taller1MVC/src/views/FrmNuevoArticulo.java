@@ -114,6 +114,7 @@ public class FrmNuevoArticulo extends javax.swing.JFrame {
         jButton3.addActionListener(this::jButton3ActionPerformed);
 
         jButton4.setText("Eliminar");
+        jButton4.addActionListener(this::jButton4ActionPerformed);
 
         paginasField.setColumns(10);
 
@@ -278,6 +279,14 @@ public class FrmNuevoArticulo extends javax.swing.JFrame {
         
         articuloDAO.updateArticulo(id, this.crearArticuloObj());
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        int id = Integer.parseInt(this.idField.getText());
+        
+        ArticuloDAO articuloDAO = new ArticuloDAO();
+        
+        articuloDAO.deleteArticulo(id);
+    }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
      * @param args the command line arguments
