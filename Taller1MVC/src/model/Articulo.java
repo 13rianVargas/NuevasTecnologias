@@ -14,12 +14,12 @@ public class Articulo {
     private String autores; 
     private int anio;
     private String revista;
-    private int volumen;
-    private int numero;     
-    private int paginas;
+    private String volumen;
+    private String numero;     
+    private String paginas;
     private String doi; 
 
-    public Articulo(String titulo, String autores, int anio, String revista, int volumen, int numero, int paginas, String doi) {
+    public Articulo(String titulo, String autores, int anio, String revista, String volumen, String numero, String paginas, String doi) {
         this.titulo = titulo;
         this.autores = autores;
         this.anio = anio;
@@ -70,27 +70,27 @@ public class Articulo {
         this.revista = revista;
     }
 
-    public int getVolumen() {
+    public String getVolumen() {
         return volumen;
     }
 
-    public void setVolumen(int volumen) {
+    public void setVolumen(String volumen) {
         this.volumen = volumen;
     }
 
-    public int getNumero() {
+    public String getNumero() {
         return numero;
     }
 
-    public void setNumero(int numero) {
+    public void setNumero(String numero) {
         this.numero = numero;
     }
 
-    public int getPaginas() {
+    public String getPaginas() {
         return paginas;
     }
 
-    public void setPaginas(int paginas) {
+    public void setPaginas(String paginas) {
         this.paginas = paginas;
     }
 

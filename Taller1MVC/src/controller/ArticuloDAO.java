@@ -27,9 +27,9 @@ public class ArticuloDAO {
             statement.setString(2, articulo.getAutores());
             statement.setInt(3, articulo.getAnio());
             statement.setString(4, articulo.getRevista());
-            statement.setInt(5, articulo.getVolumen());
-            statement.setInt(6, articulo.getNumero());
-            statement.setInt(7, articulo.getPaginas());
+            statement.setString(5, articulo.getVolumen());
+            statement.setString(6, articulo.getNumero());
+            statement.setString(7, articulo.getPaginas());
             statement.setString(8, articulo.getDoi());
 
             int rowsInserted = statement.executeUpdate();
@@ -55,8 +55,8 @@ public class ArticuloDAO {
             ResultSet result = statement.executeQuery();
             if (result.next()) {
                 articulo = new Articulo(result.getString("titulo"), result.getString("autores"),
-                        result.getInt("anio"), result.getString("revista"), result.getInt("volumen"),
-                        result.getInt("numero"), result.getInt("paginas"), result.getString("doi"));
+                        result.getInt("anio"), result.getString("revista"), result.getString("volumen"),
+                        result.getString("numero"), result.getString("paginas"), result.getString("doi"));
                 articulo.setId(result.getInt("id"));
             } else {
                 JOptionPane.showMessageDialog(null, "¡No existe registro!");
@@ -79,9 +79,9 @@ public class ArticuloDAO {
             statement.setString(2, articulo.getAutores());
             statement.setInt(3, articulo.getAnio());
             statement.setString(4, articulo.getRevista());
-            statement.setInt(5, articulo.getVolumen());
-            statement.setInt(6, articulo.getNumero());
-            statement.setInt(7, articulo.getPaginas());
+            statement.setString(5, articulo.getVolumen());
+            statement.setString(6, articulo.getNumero());
+            statement.setString(7, articulo.getPaginas());
             statement.setString(8, articulo.getDoi());
             statement.setInt(9, id);
             
