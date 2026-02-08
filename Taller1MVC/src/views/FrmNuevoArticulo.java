@@ -14,12 +14,26 @@ import model.Articulo;
 public class FrmNuevoArticulo extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(FrmNuevoArticulo.class.getName());
+    private static final ArticuloDAO articuloDAO = new ArticuloDAO();
 
     /**
      * Creates new form FrmNuevoLibro
      */
     public FrmNuevoArticulo() {
         initComponents();
+    }
+    
+    private void limpiarForm() {
+        String base = "";
+        this.tituloField.setText(base);
+        this.autorField.setText(base);
+        this.anioField.setText(base);
+        this.revistaField.setText(base);
+        this.volumenField.setText(base);
+        this.numeroField.setText(base);
+        this.paginasField.setText(base);
+        this.doiField.setText(base);
+        this.idField.setText(base);
     }
     
     private Articulo crearArticuloObj() {
@@ -239,10 +253,10 @@ public class FrmNuevoArticulo extends javax.swing.JFrame {
     }//GEN-LAST:event_idFieldActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+                
+        FrmNuevoArticulo.articuloDAO.insertArticulo(this.crearArticuloObj());
         
-        ArticuloDAO articuloDAO = new ArticuloDAO();
-        
-        articuloDAO.insertArticulo(this.crearArticuloObj());
+        this.limpiarForm();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void autorFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_autorFieldActionPerformed
@@ -255,12 +269,8 @@ public class FrmNuevoArticulo extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         int id = Integer.parseInt(this.idField.getText());
-        System.out.println(id);
-        ArticuloDAO articuloDAO = new ArticuloDAO();
 
-        //Se llama el método para buscar pasando el id
-
-        Articulo articulo = articuloDAO.searchArticulo(id);
+        Articulo articulo = FrmNuevoArticulo.articuloDAO.searchArticulo(id);
 
         this.tituloField.setText(articulo.getTitulo());
         this.autorField.setText(articulo.getAutores());
@@ -270,22 +280,25 @@ public class FrmNuevoArticulo extends javax.swing.JFrame {
         this.numeroField.setText(articulo.getNumero());
         this.paginasField.setText(articulo.getPaginas());
         this.doiField.setText(articulo.getDoi());
+        
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         int id = Integer.parseInt(this.idField.getText());
+                
+        FrmNuevoArticulo.articuloDAO.updateArticulo(id, this.crearArticuloObj());
         
-        ArticuloDAO articuloDAO = new ArticuloDAO();
-        
-        articuloDAO.updateArticulo(id, this.crearArticuloObj());
+        this.limpiarForm();
+
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         int id = Integer.parseInt(this.idField.getText());
+                
+        FrmNuevoArticulo.articuloDAO.deleteArticulo(id);
         
-        ArticuloDAO articuloDAO = new ArticuloDAO();
-        
-        articuloDAO.deleteArticulo(id);
+        this.limpiarForm();
+
     }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
