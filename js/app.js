@@ -3,6 +3,8 @@ const ctx = canvas.getContext('2d');
 
 let particles = []; // Kept for compatibility if needed, but unused in new logic
 const mouse = {x: null, y: null};
+let score = 0;
+let countElement;
 
 // Ajustar el año automáticamente
 const yearElement = document.getElementById('year');
@@ -16,6 +18,15 @@ let spiders = [];
 const SPIDER_COUNT = 5; // Cantidad de arañas
 const WEB_COLOR = 'rgba(255, 255, 255, 0.1)';
 const SPIDER_COLOR = '#a30000'; // Rojo Spider-Man
+
+function updateScore() {
+    if (!countElement) {
+        countElement = document.getElementById('count');
+    }
+    if (countElement) {
+        countElement.textContent = score;
+    }
+}
 
 window.addEventListener('mousemove', (e) => {
     mouse.x = e.clientX;
@@ -183,8 +194,16 @@ window.addEventListener('click', (e) => {
         const dist = Math.sqrt(dx*dx + dy*dy);
         
         // Hitbox radius based on size (approx 20px radius with scale 2.5)
-        if (dist < 40) { // Aumentado un poco para facilitar click
+        if (dist < 40) { 
              spider.isSquashed = true;
+             score++;
+             updateScore();
+
+             // Hacer que la araña reaparezca después de 3 segundos
+             setTimeout(() => {
+                 spider.isSquashed = false;
+                 spider.reset();
+             }, 3000);
         }
     });
 });

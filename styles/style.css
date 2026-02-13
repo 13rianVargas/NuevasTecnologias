@@ -18,6 +18,23 @@ body {
     pointer-events: none; /* Allows clicking through the canvas */
 }
 
+/* Contador de Arañas */
+#spider-counter {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: rgba(255, 0, 0, 0.8);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+    z-index: 100;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+    border: 2px solid #ffffff;
+    pointer-events: none; /* Para que no interfiera con los clics en las arañas */
+}
+
 /* Header Styles */
 header {
     text-align: center;
