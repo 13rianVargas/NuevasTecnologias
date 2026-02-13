@@ -128,3 +128,16 @@ header h1 {
     font-size: 0.9rem;
     color: rgba(255, 255, 255, 0.8);
 }
+
+.marvel-logo-link {
+    display: block;
+    width: fit-content;
+    margin: 0 auto 12px;
+}
+
+.marvel-logo {
+    display: block;
+    height: 56px;     /* ajusta el tamaño aquí */
+    width: auto;
+    object-fit: contain;
+}
