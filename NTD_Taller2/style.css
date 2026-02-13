@@ -1,0 +1,32 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.container span{
+    flex: 1;
+    border: 1px solid black;
+    padding: 10px;
+}
+
+h1 {
+    color: black;
+    text-align: center;
+    bold: true;
+}
+
+h2 {
+    color: black;
+    text-align: center;
+    bold: true;
+    italic: true;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
