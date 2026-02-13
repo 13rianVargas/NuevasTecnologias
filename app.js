@@ -9,6 +9,7 @@ window.addEventListener('mousemove', (e) => {
     mouse.x = e.clientX;
     mouse.y = e.clientY;
 });
+document.getElementById('year').textContent = new Date().getFullYear();
 
 class Particle {
     constructor() {
