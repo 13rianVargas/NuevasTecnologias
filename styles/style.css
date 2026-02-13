@@ -83,7 +83,7 @@ header {
     width: 150px; /* Adjust size as needed */
     height: auto;
     display: block;
-    margin: 0 auto 10px auto;
+    margin: 10px auto 10px auto;
 }
 
 header h1 {
@@ -112,7 +112,7 @@ h2 {
 
 .titulo-secundario {
     text-align: center;
-    margin-top: 48px;
+    margin-top: 80px;
     color: #ff0000;
     position: relative;
     padding-bottom: 10px;
@@ -208,4 +208,19 @@ h2 {
     font-size: 0.8em;
     color: #ccc;
     margin-top: 5px;
+}
+
+/* Espaciado para secciones específicas */
+.meme {
+    margin-bottom: 80px;
+}
+
+.Villanos {
+    margin-top: 80px;
+    margin-bottom: 60px;
+}
+
+#comics {
+    margin-top: 60px;
+    padding-top: 20px;
 }
