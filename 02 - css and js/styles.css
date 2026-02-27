@@ -1,0 +1,27 @@
+.fruta {
+        color: white;
+        background-color: red;
+      }
+
+      #p3 {
+        text-decoration: underline;
+        color: purple;
+      }
+
+      [ropa] {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      p .sit {
+        color: green;
+      }
+      p:hover {
+        font-size: 25px;
+        background-color: aquamarine;
+        color: blue;
+      }
+
+      ::selection {
+        background-color: red;
+        color: white;
+      }
