@@ -1,0 +1,110 @@
+
+# =====================
+# Sistema Operativo
+# =====================
+
+# macOS
+.DS_Store
+._*
+.Spotlight-V100
+.Trashes
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+# =====================
+# Node.js / Express
+# =====================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+.npm
+.node_repl_history
+.env
+.env.*
+!.env.example
+.cache/
+dist/
+build/
+
+# =====================
+# Angular
+# =====================
+/dist
+/tmp
+/out-tsc
+/.angular/cache
+.angular/
+
+# Angular test coverage
+/coverage
+
+# Angular compilados
+*.js.map
+*.d.ts
+
+# =====================
+# HTML / CSS / JS
+# =====================
+*.min.js
+*.min.css
+*.bundle.js
+*.bundle.css
+
+# =====================
+# Editores e IDEs
+# =====================
+
+# VS Code
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+
+# JetBrains (WebStorm, IntelliJ)
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Sublime Text
+*.sublime-workspace
+
+# Vim / Neovim
+*.swp
+*.swo
+Session.vim
+.netrwhist
+
+# =====================
+# Logs y temporales
+# =====================
+logs/
+*.log
+*.pid
+*.seed
+*.pid.lock
+.eslintcache
+.stylelintcache
+
