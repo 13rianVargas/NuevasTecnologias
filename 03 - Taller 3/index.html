@@ -1,0 +1,116 @@
+<!doctype html>
+<!-- DOCTYPE: HTML5 -->
+<html lang="es">
+  <!-- etiqueta raíz, atributo: lang -->
+  <!-- (HyperText Markup Language) -->
+  <head>
+    <!-- etiqueta: metadatos -->
+    <meta charset="UTF-8" />
+    <!-- atributo: charset -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- atributo: viewport responsive -->
+    <title>Gestor de Proyectos</title>
+    <!-- etiqueta: título pestaña -->
+    <link rel="stylesheet" href="css/styles.css" />
+    <!-- etiqueta: vincular CSS, atributos: rel, href -->
+  </head>
+
+  <body>
+    <!-- etiqueta: contenido visible -->
+    <header>
+      <!-- etiqueta semántica: encabezado -->
+      <h1>Gestor de Proyectos</h1>
+      <!-- etiqueta: heading nivel 1 -->
+    </header>
+
+    <main>
+      <!-- etiqueta semántica: contenido principal -->
+      <!-- comentario HTML -->
+      <div class="form-crear">
+        <!-- etiqueta: div, atributo: class -->
+        <input
+          type="text"
+          id="nombreProyecto"
+          placeholder="Nombre del nuevo proyecto"
+        />
+        <!-- etiqueta auto-cerrada, atributos: type, id, placeholder -->
+        <button id="btnNuevoProyecto">+ Nuevo Proyecto</button>
+        <!-- etiqueta: botón, atributo: id -->
+      </div>
+
+      <div id="listaProyectos"></div>
+      <!-- atributo: id (contenedor dinámico) -->
+    </main>
+
+    <template id="template-proyecto">
+      <!-- etiqueta: template (molde reutilizable) -->
+      <div class="card-proyecto">
+        <div class="card-header">
+          <div class="card-titulo">
+            <img src="assets/folder.svg" class="icono" />
+            <!-- etiqueta: img, atributos: src, class -->
+            <h3 class="proyecto-nombre"></h3>
+          </div>
+          <button class="btn-eliminar btn-eliminar-proyecto">Eliminar</button>
+        </div>
+
+        <div class="seccion">
+          <h4><img src="assets/users.svg" class="icono-mini" /> Miembros</h4>
+          <div class="form-inline">
+            <input
+              type="text"
+              class="input-miembro"
+              placeholder="Nombre del miembro"
+            />
+            <button class="btn-agregar btn-agregar-miembro">+ Agregar</button>
+          </div>
+          <ul class="lista-miembros"></ul>
+          <!-- etiqueta: lista desordenada -->
+        </div>
+
+        <div class="seccion">
+          <h4><img src="assets/task.svg" class="icono-mini" /> Tareas</h4>
+          <div class="form-inline">
+            <input
+              type="text"
+              class="input-tarea"
+              placeholder="Nombre de la tarea"
+            />
+            <select class="select-responsable">
+              <!-- etiqueta: select (dropdown) -->
+              <option value="">Sin asignar</option>
+              <!-- etiqueta: option, atributo: value -->
+            </select>
+            <button class="btn-agregar btn-agregar-tarea">+ Agregar</button>
+          </div>
+          <ul class="lista-tareas"></ul>
+        </div>
+      </div>
+    </template>
+
+    <template id="template-miembro">
+      <!-- template: miembro -->
+      <li>
+        <!-- etiqueta: item de lista -->
+        <img src="assets/user.svg" class="icono-mini" />
+        <span class="miembro-nombre"></span>
+        <!-- etiqueta: span -->
+        <button class="btn-eliminar-mini btn-eliminar-miembro">✕</button>
+      </li>
+    </template>
+
+    <template id="template-tarea">
+      <!-- template: tarea -->
+      <li>
+        <input type="checkbox" class="checkbox-tarea" />
+        <!-- atributo: type="checkbox" -->
+        <span class="nombre-tarea"></span>
+        <span class="badge-responsable"></span>
+        <button class="btn-eliminar-mini btn-eliminar-tarea">✕</button>
+      </li>
+    </template>
+
+    <script src="funciones.js"></script>
+    <!-- etiqueta: vincular JS, atributo: src -->
+  </body>
+</html>

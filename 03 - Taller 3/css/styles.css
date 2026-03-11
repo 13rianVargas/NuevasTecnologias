@@ -1,0 +1,267 @@
+* { /* selector universal */
+  margin: 0; /* propiedad: margen exterior */
+  padding: 0; /* propiedad: espacio interior */
+  box-sizing: border-box; /* propiedad: box model */
+}
+
+body { /* selector de etiqueta */
+  font-family: "Segoe UI", Arial, sans-serif; /* propiedad: tipografía */
+  background: #f0f2f5; /* propiedad: fondo */
+  color: #333; /* propiedad: color de texto */
+  min-height: 100vh;
+}
+
+header { /* selector de etiqueta */
+  background: #2b1550;
+  color: #e0e0e0;
+  padding: 40px 30px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* propiedad: sombra */
+}
+
+header h1 { /* selector descendiente */
+  font-size: 2.2rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+main { /* selector de etiqueta */
+  max-width: 850px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
+.form-crear { /* selector de clase */
+  background: white;
+  padding: 20px 24px;
+  border-radius: 12px; /* propiedad: esquinas redondeadas */
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+  display: flex; /* propiedad: flexbox */
+  gap: 10px; /* propiedad: espacio entre flex items */
+  align-items: center; /* propiedad: alineación vertical */
+  margin-bottom: 28px;
+}
+
+.form-crear input { /* selector descendiente */
+  flex: 1; /* propiedad: crecer para llenar espacio */
+  padding: 10px 14px;
+  border: 2px solid #e0e0e0; /* propiedad: borde */
+  border-radius: 8px;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s; /* propiedad: transición animada */
+}
+
+.form-crear input:focus { /* pseudo-clase: focus */
+  border-color: #4a6cf7;
+}
+
+.form-crear button { /* selector descendiente */
+  background: #4a6cf7;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  cursor: pointer; /* propiedad: cursor manita */
+  white-space: nowrap;
+  transition: background 0.2s;
+}
+
+.form-crear button:hover { /* pseudo-clase: hover */
+  background: #3b5de7;
+}
+
+.card-proyecto { /* selector de clase */
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.card-header { /* selector de clase */
+  display: flex;
+  justify-content: space-between; /* propiedad: distribuir con espacio */
+  align-items: center;
+  padding: 16px 20px;
+  background: #f8f9ff;
+  border-bottom: 1px solid #eee;
+}
+
+.card-titulo { /* selector de clase */
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.card-titulo h3 { /* selector descendiente */
+  font-size: 1.1rem;
+  color: #2d3748;
+}
+
+.icono { /* selector de clase */
+  width: 22px;
+  height: 22px;
+  opacity: 0.7;
+}
+
+.icono-mini { /* selector de clase */
+  width: 16px;
+  height: 16px;
+  opacity: 0.6;
+  vertical-align: middle;
+  margin-right: 4px;
+}
+
+.seccion { /* selector de clase */
+  padding: 16px 20px;
+  border-top: 1px solid #f0f0f0;
+}
+
+.seccion h4 { /* selector descendiente */
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.form-inline { /* selector de clase */
+  display: flex;
+  gap: 8px;
+  margin-bottom: 10px;
+  flex-wrap: wrap; /* propiedad: permitir salto de línea */
+}
+
+.form-inline input,
+.form-inline select { /* selector agrupado (coma) */
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  outline: none;
+}
+
+.form-inline input { /* selector descendiente */
+  flex: 1;
+  min-width: 140px;
+}
+
+.form-inline input:focus,
+.form-inline select:focus { /* pseudo-clase: focus (agrupado) */
+  border-color: #4a6cf7;
+}
+
+.form-inline select { /* selector descendiente */
+  min-width: 130px;
+  background: white;
+}
+
+.btn-agregar { /* selector de clase */
+  background: #48bb78;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.2s;
+}
+
+.btn-agregar:hover { /* pseudo-clase: hover */
+  background: #38a169;
+}
+
+.btn-eliminar { /* selector de clase */
+  background: none;
+  color: #e53e3e;
+  border: 1px solid #e53e3e;
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-eliminar:hover { /* pseudo-clase: hover */
+  background: #e53e3e;
+  color: white;
+}
+
+.btn-eliminar-mini { /* selector de clase */
+  background: none;
+  border: none;
+  color: #ccc;
+  font-size: 0.85rem;
+  cursor: pointer;
+  margin-left: auto;
+  padding: 2px 6px;
+  border-radius: 4px;
+  transition: color 0.2s;
+}
+
+.btn-eliminar-mini:hover { /* pseudo-clase: hover */
+  color: #e53e3e;
+}
+
+.lista-miembros,
+.lista-tareas { /* selector agrupado */
+  list-style: none;
+}
+
+.lista-miembros li,
+.lista-tareas li { /* selector descendiente agrupado */
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  border-radius: 6px;
+  margin-bottom: 4px;
+  background: #fafafa;
+  font-size: 0.9rem;
+}
+
+.lista-miembros li:hover,
+.lista-tareas li:hover { /* pseudo-clase: hover */
+  background: #f0f0f0;
+}
+
+.tarea-completada .nombre-tarea { /* selector descendiente */
+  text-decoration: line-through; /* propiedad: texto tachado */
+  color: #aaa;
+}
+
+.nombre-tarea { /* selector de clase */
+  flex: 1;
+}
+
+.badge-responsable { /* selector de clase */
+  background: #ebf4ff;
+  color: #4a6cf7;
+  padding: 2px 10px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.badge-responsable.sin-asignar { /* selector de clase encadenado */
+  background: #fff5f5;
+  color: #c53030;
+}
+
+.vacio { /* selector de clase */
+  text-align: center;
+  color: #aaa;
+  padding: 40px 20px;
+  font-size: 1rem;
+}
+
+input[type="checkbox"] { /* selector de atributo */
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  accent-color: #4a6cf7; /* propiedad: color del checkbox */
+}
