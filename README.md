@@ -24,6 +24,7 @@ Para mantener un orden impecable durante el semestre, hemos estructurado nuestro
 - **Rama `main`:** Reservada estrictamente para la documentación general (este README).
 - **Talleres y Prácticas:** Cada taller o asignación de la materia se encuentra alojado en una rama independiente.
   - _Ejemplo:_ Para ver el primer taller, debes cambiar a la rama `Taller1`. Para el segundo, a la rama `Taller2`, y así sucesivamente (`Taller3`, `Taller4`...).
+- **Rama personal `13rian`:** Contiene los talleres o actividades individuales de Brian, organizados en diferentes carpetas dentro de esa rama.
 
 ---
 
