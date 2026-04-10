@@ -1,0 +1,191 @@
+{
+  "info": {
+    "_postman_id": "ef14e849-2109-4f8e-81b1-746f10dd06ec",
+    "name": "ZootoPIA",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "50211009",
+    "_collection_link": "https://go.postman.co/collection/50211009-ef14e849-2109-4f8e-81b1-746f10dd06ec?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "New Animal",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{ \n  \"nombre\": \"Rex\", \n  \"edad\": 5, \n  \"tipo\": \"Perro\" \n} ",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/animals",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "animals"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get All Animals",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/animals",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "animals"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Aniaml by ID",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{ \n  \"nombre\": \"Rex actualizado\", \n  \"edad\": 6, \n  \"tipo\": \"Perro\" \n} ",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/animals/:id",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "animals",
+            ":id"
+          ],
+          "variable": [
+            {
+              "key": "id",
+              "value": "69c5de6bb8249d3e59f4b9b2"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Animal Update",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{ \n  \"nombre\": \"Rex actualizado\", \n  \"edad\": 6, \n  \"tipo\": \"Perro\" \n} ",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/animals/:id",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "animals",
+            ":id"
+          ],
+          "variable": [
+            {
+              "key": "id",
+              "value": "69c5de6bb8249d3e59f4b9b2"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete Animal by ID",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/animals/:id ",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "animals",
+            ":id "
+          ],
+          "variable": [
+            {
+              "key": "id ",
+              "value": "69bc9513c0993c540437043b"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "New User",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"usuario\": \"user1\",\n    \"correo\": \"user1@correo.com\",\n    \"clave\": \"123456\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/signup",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "signup"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
