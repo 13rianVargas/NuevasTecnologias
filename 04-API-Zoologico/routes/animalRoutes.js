@@ -15,7 +15,8 @@ router.post("/", async (req, res) => {
 });
 
 // READ ALL: Obtener todos los animales
-router.get("/", verifyToken, async (req, res) => {
+//router.get("/", verifyToken, async (req, res) => {
+router.get("/", async (req, res) => {
   try {
     const animals = await Animal.find(); // Obtener todos los animales de la base de datos
     res.json(animals); // Devolver los animales en formato JSON
