@@ -26,7 +26,8 @@ router.get("/", async (req, res) => {
 });
 
 // READ ONE: Obtener un solo animal por su ID
-router.get("/:id", verifyToken, async (req, res) => {
+// 13rian: Se comenta el verifyToken temporalmente para poder probar el front sin login
+router.get("/:id", async (req, res) => {
   try {
     const animal = await Animal.findById(req.params.id); // Buscar animal por ID
     if (!animal) {
