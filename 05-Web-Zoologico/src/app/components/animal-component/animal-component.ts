@@ -17,6 +17,8 @@ export class AnimalComponent {
 
   animalList: any = [];
   animalForm: FormGroup | any;
+  idAnimal: any;
+  editableAnimal: boolean = false;
 
   constructor(
     private animalService: AnimalService,
@@ -48,6 +50,46 @@ export class AnimalComponent {
       );
   }
 
+  toggleEditAnimal(id: any) {
+    console.log(this.editableAnimal);
+    this.idAnimal = id;
+    console.log(this.idAnimal)
+    this.animalService.getOneAnimal(id).subscribe(
+      data => {
+        this.animalForm.setValue({
+          nombre: data.nombre,
+          edad: data.edad,
+          tipo: data.tipo,
+        });
+      }
+    );
+    this.editableAnimal = !this.editableAnimal;
+  }
+
+  updateAnimalEntry() {
+    //Removiendo valores vacios del formulario de actualización​
+    for (let key in this.animalForm.value) {
+      if (this.animalForm.value[key] === '') {
+        this.animalForm.removeControl(key);
+      }
+    }
+    this.animalService.updateAnimal(this.idAnimal, this.animalForm.value).subscribe(
+      () => {
+        //Enviando mensaje de confirmación​
+        this.newMessage("Animal editado");
+      }
+    );
+  }
+
+  deleteAnimalEntry(id: any) {
+    console.log(id)
+    this.animalService.deleteAnimal(id).subscribe(
+      () => {
+        //Enviando mensaje de confirmación​
+        this.newMessage("Animal eliminado");
+      }
+    );
+  }
 
   ngOnInit() {
     this.animalForm = this.formBuilder.group({
